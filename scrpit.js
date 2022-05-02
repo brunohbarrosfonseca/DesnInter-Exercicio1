@@ -1,18 +1,29 @@
-let answer = document.querySelector('answer')
+let resposta = document.querySelector('.resposta')
+let resultado = document.querySelector('.resultado')
+let quiz = document.querySelector ('.quiz')
+let image = document.querySelector ('img')
 
+function checkAnswer(event) {
+    quiz.classList.add('inactive')
+    let opcao = event.target
+    opcao.classList.add('clicked')
 
-function result(event) {
-    if (this.classList.contains('correct')){
-        alert('Acertou!')
+    if (opcao.classList.contains ('respostacorreta')) {
+        resultado.textContent = 'Acertou!'
+        resultado.style.color = 'Green'
+        image.style.display = 'initial'
+    } else {
+        resultado.textContent = 'Errou!'
+        resultado.style.color = 'Red'
     }
-    else {
-        alert('Errou!')
+
+    resposta.style.display = 'initial'
+
     }
-    answer.style.display = 'initial'
-}
 
-let choices = document.querySelectorAll('li')
-for (let choice of choices) {
+    let opcoes = document.querySelectorAll ('li')
 
-choice.addEventListener('click', result)
-}
+    for (let opcao of opcoes) {
+
+        opcao.addEventListener ('click',checkAnswer)
+    }
