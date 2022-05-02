@@ -1,7 +1,7 @@
 let resposta = document.querySelector('.resposta')
 let resultado = document.querySelector('.resultado')
 let quiz = document.querySelector ('.quiz')
-let image = document.querySelector ('img')
+let imagem = document.querySelector ('.imagemerrada')
 
 function checkAnswer(event) {
     quiz.classList.add('inactive')
@@ -11,10 +11,11 @@ function checkAnswer(event) {
     if (opcao.classList.contains ('respostacorreta')) {
         resultado.textContent = 'Acertou!'
         resultado.style.color = 'Green'
-        image.style.display = 'initial'
+        imagem.style.display = 'initial'
     } else {
         resultado.textContent = 'Errou!'
         resultado.style.color = 'Red'
+        
     }
 
     resposta.style.display = 'initial'
